@@ -1,0 +1,159 @@
+{
+  "siteUrl": "https://vadagama.naition.sortedmap.ru/",
+  "pageHeight": 8375,
+  "viewportHeight": 1249,
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Первая помощь: практический курс для каждого",
+      "yStart": 0,
+      "yEnd": 1249,
+      "observed": [
+        "h1: Первая помощь…",
+        "badge: Офлайн · Москва · 15 августа 2026",
+        "кнопка .btn-register «Записаться на курс» с data-scroll-to=pricing",
+        "ссылка «Смотреть программу»",
+        "meta: дата/время/место",
+        "hero min-height ~viewport"
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "О курсе",
+      "yStart": 1249,
+      "yEnd": 1921,
+      "observed": [
+        "h2: О курсе",
+        "4 feature-card",
+        "trust-teaser",
+        "кнопка .btn-register «Выбрать тариф» → pricing",
+        "feature-card cursor:pointer без обработчика"
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "Программа курса",
+      "yStart": 1921,
+      "yEnd": 3406,
+      "observed": [
+        "h2: Программа",
+        "6 program-module с details",
+        "кнопка .btn-register «К тарифам» → pricing"
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Виды травм и состояний",
+      "yStart": 3406,
+      "yEnd": 4142,
+      "observed": [
+        "h2: Виды травм",
+        "6 injury-card",
+        "cursor:pointer без клика"
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Юридические аспекты",
+      "yStart": 4142,
+      "yEnd": 4967,
+      "observed": [
+        "h2: Юридические аспекты",
+        "3 legal-block"
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Фото практики СЛР",
+      "yStart": 4967,
+      "yEnd": 5527,
+      "observed": [
+        "img cpr-training.jpg full-bleed"
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Инструкторы",
+      "yStart": 5527,
+      "yEnd": 6354,
+      "observed": [
+        "h2: Инструкторы",
+        "3 instructor-card",
+        "упоминание 1200 слушателей"
+      ]
+    },
+    {
+      "id": "s8",
+      "label": "Тарифы",
+      "yStart": 6354,
+      "yEnd": 7164,
+      "observed": [
+        "h2: Тарифы / .pricing-section",
+        "3 pricing-card",
+        "3 .btn-register с data-tariff → форма",
+        "featured «Лучший выбор»"
+      ]
+    },
+    {
+      "id": "s9",
+      "label": "Записаться на курс",
+      "yStart": 7164,
+      "yEnd": 8283,
+      "observed": [
+        "#registration / #registration-form",
+        "поля name,phone,email,purpose,bot_session_id",
+        "кнопка Отправить заявку"
+      ]
+    },
+    {
+      "id": "s10",
+      "label": "Подвал",
+      "yStart": 8283,
+      "yEnd": 8375,
+      "observed": [
+        "© 2026 Учебный центр «Спаси-Себя»"
+      ]
+    }
+  ],
+  "conversionGoal": {
+    "type": "form_submit",
+    "formSelector": "#registration-form",
+    "fieldSelectors": [
+      "[name=name]",
+      "[name=phone]",
+      "[name=email]",
+      "[name=purpose]"
+    ]
+  },
+  "falseAffordances": [
+    ".feature-card",
+    ".program-module",
+    ".injury-card"
+  ],
+  "structuralAudit": [
+    "s1: на первом экране есть .btn-register, но data-scroll-to=pricing — клик ведёт к тарифам (~76% высоты), не к форме (~85%)",
+    "s1: hero занимает ~1249px (почти весь viewport) — форма далеко по Y",
+    "s2–s3: mid-page .btn-register также ведут только к pricing, не к #registration",
+    "s2/s3/s4: .feature-card / .program-module / .injury-card с cursor:pointer без кликабельного действия (ложная интерактивность)",
+    "s8: первые .btn-register с data-tariff, ведущие к форме, появляются только около y=6354 (~76%)",
+    "s9: форма #registration-form у y≈7164 (~85% pageHeight); 4 обязательных поля + purpose",
+    "sticky-cta изначально hidden и тоже data-scroll-to=pricing"
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "y": 1921,
+      "label": "Начало программы курса (длинный контент)"
+    },
+    {
+      "id": "m2",
+      "y": 6354,
+      "label": "Блок тарифов с кнопками Записаться"
+    },
+    {
+      "id": "m3",
+      "y": 7164,
+      "label": "Форма заявки #registration-form"
+    }
+  ]
+}

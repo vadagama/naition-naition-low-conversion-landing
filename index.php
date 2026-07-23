@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="hero-actions">
-                <button type="button" class="btn btn-register" data-scroll-to="pricing">Записаться на курс</button>
+                <button type="button" class="btn btn-register" >Записаться</button>
                 <a class="btn btn-secondary" href="#program">Смотреть программу</a>
             </div>
             <p class="hero-note">
@@ -45,12 +45,12 @@
     <div class="sticky-cta" id="sticky-cta" hidden>
         <div class="container sticky-cta-inner">
             <span class="sticky-cta-text">Первая помощь · от 4 900 ₽ · Москва</span>
-            <button type="button" class="btn btn-register" data-scroll-to="pricing">Записаться</button>
+            <button type="button" class="btn btn-register" >Записаться</button>
         </div>
     </div>
 
     <main>
-        <section class="section">
+<section class="section">
             <div class="container">
                 <h2 class="section-title">О курсе</h2>
                 <p class="section-lead">
@@ -86,12 +86,91 @@
                         <strong>Готовы записаться?</strong>
                         <span>Места ограничены · от 4 900 ₽</span>
                     </div>
-                    <button type="button" class="btn btn-register" data-scroll-to="pricing">Выбрать тариф</button>
+                    <button type="button" class="btn btn-register" >Записаться · от 4 900 ₽</button>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="program">
+<section class="section pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="section-title">Тарифы</h2>
+                <p class="section-lead">
+                    Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
+                </p>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <h3>Базовый</h3>
+                        <div class="price">4 900 ₽</div>
+                        <ul class="pricing-list">
+                            <li>Участие в полном однодневном курсе</li>
+                            <li>Сертификат и памятка</li>
+                            <li>Кофе-брейки</li>
+                        </ul>
+                        <button type="button" class="btn btn-register" data-tariff="Базовый">Записаться</button>
+                    </article>
+                    <article class="pricing-card featured">
+                        <span class="pricing-badge">Лучший выбор</span>
+                        <h3>Расширенный</h3>
+                        <div class="price">7 900 ₽</div>
+                        <p class="pricing-value">Максимум практики и набор перевязочных материалов с собой.</p>
+                        <ul class="pricing-list">
+                            <li>Всё из базового тарифа</li>
+                            <li>Набор перевязочных материалов</li>
+                            <li>Дополнительный практический блок</li>
+                        </ul>
+                        <button type="button" class="btn btn-register" data-tariff="Расширенный">Записаться</button>
+                    </article>
+                    <article class="pricing-card">
+                        <h3>Корпоративный</h3>
+                        <div class="price">12 900 ₽</div>
+                        <ul class="pricing-list">
+                            <li>Индивидуальный разбор рисков профессии</li>
+                            <li>Консультация для HR или руководителя</li>
+                            <li>Отчёт о прохождении для работодателя</li>
+                        </ul>
+                        <button type="button" class="btn btn-register" data-tariff="Корпоративный">Записаться</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+<section class="section registration-section" id="registration">
+            <div class="container">
+                <div class="registration-panel">
+                    <h2 class="section-title">Записаться на курс</h2>
+                    <p class="section-lead">
+                        Оставьте заявку — ответим в течение дня, подтвердим место и ответим на вопросы.
+                        15 августа 2026 · Москва, ул. Примерная, 10.
+                    </p>
+                    <p class="tariff-chip" id="tariff-chip" hidden></p>
+                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
+                        <input type="hidden" name="bot_session_id" id="bot_session_id" value="">
+                        <label>
+                            Имя
+                            <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться">
+                        </label>
+                        <label>
+                            Телефон
+                            <input type="tel" name="phone" required autocomplete="tel" placeholder="+7 900 000-00-00">
+                        </label>
+                        <label>
+                            E-mail
+                            <input type="email" name="email" required autocomplete="email" placeholder="для подтверждения заявки">
+                        </label>
+                        <label>
+                            Цель прохождения курса
+                            <span class="field-hint">Хватит одной фразы — например, для семьи или работы</span>
+                            <textarea name="purpose" required rows="3" placeholder="например: для семьи / работы">Хочу пройти курс первой помощи</textarea>
+                        </label>
+                        <button type="submit" class="btn">Отправить заявку</button>
+                        <p class="form-reassure">Ответим в течение дня · офлайн-курс в Москве · 15 августа 2026</p>
+                    </form>
+                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+<section class="section" id="program">
             <div class="container">
                 <h2 class="section-title">Программа курса</h2>
                 <p class="section-lead program-intro">
@@ -187,15 +266,15 @@
                 </div>
                 <div class="cta-band">
                     <div class="cta-band-copy">
-                        <strong>Выбрать тариф и записаться</strong>
+                        <strong>Записаться на курс</strong>
                         <span>от 4 900 ₽ · офлайн в Москве</span>
                     </div>
-                    <button type="button" class="btn btn-register" data-scroll-to="pricing">К тарифам</button>
+                    <button type="button" class="btn btn-register" >Записаться</button>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+<section class="section">
             <div class="container">
                 <h2 class="section-title">Виды травм и состояний</h2>
                 <p class="section-lead">
@@ -230,7 +309,7 @@
             </div>
         </section>
 
-        <section class="section legal-section">
+<section class="section legal-section">
             <div class="container">
                 <h2 class="section-title">Юридические аспекты</h2>
                 <p class="section-lead">
@@ -260,11 +339,11 @@
             </div>
         </section>
 
-        <section class="emotional-photo">
+<section class="emotional-photo">
             <img src="images/cpr-training.jpg" alt="Практика сердечно-легочной реанимации на манекене">
         </section>
 
-        <section class="section" id="instructors">
+<section class="section" id="instructors">
             <div class="container">
                 <h2 class="section-title">Инструкторы</h2>
                 <p class="section-lead">
@@ -301,85 +380,6 @@
                             <li>Ведёт практические блоки по кровотечениям и травмам</li>
                         </ul>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section pricing-section" id="pricing">
-            <div class="container">
-                <h2 class="section-title">Тарифы</h2>
-                <p class="section-lead">
-                    Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
-                </p>
-                <div class="pricing-grid">
-                    <article class="pricing-card">
-                        <h3>Базовый</h3>
-                        <div class="price">4 900 ₽</div>
-                        <ul class="pricing-list">
-                            <li>Участие в полном однодневном курсе</li>
-                            <li>Сертификат и памятка</li>
-                            <li>Кофе-брейки</li>
-                        </ul>
-                        <button type="button" class="btn btn-register" data-tariff="Базовый">Записаться</button>
-                    </article>
-                    <article class="pricing-card featured">
-                        <span class="pricing-badge">Лучший выбор</span>
-                        <h3>Расширенный</h3>
-                        <div class="price">7 900 ₽</div>
-                        <p class="pricing-value">Максимум практики и набор перевязочных материалов с собой.</p>
-                        <ul class="pricing-list">
-                            <li>Всё из базового тарифа</li>
-                            <li>Набор перевязочных материалов</li>
-                            <li>Дополнительный практический блок</li>
-                        </ul>
-                        <button type="button" class="btn btn-register" data-tariff="Расширенный">Записаться</button>
-                    </article>
-                    <article class="pricing-card">
-                        <h3>Корпоративный</h3>
-                        <div class="price">12 900 ₽</div>
-                        <ul class="pricing-list">
-                            <li>Индивидуальный разбор рисков профессии</li>
-                            <li>Консультация для HR или руководителя</li>
-                            <li>Отчёт о прохождении для работодателя</li>
-                        </ul>
-                        <button type="button" class="btn btn-register" data-tariff="Корпоративный">Записаться</button>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section registration-section" id="registration">
-            <div class="container">
-                <div class="registration-panel">
-                    <h2 class="section-title">Записаться на курс</h2>
-                    <p class="section-lead">
-                        Оставьте заявку — ответим в течение дня, подтвердим место и ответим на вопросы.
-                        15 августа 2026 · Москва, ул. Примерная, 10.
-                    </p>
-                    <p class="tariff-chip" id="tariff-chip" hidden></p>
-                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
-                        <input type="hidden" name="bot_session_id" id="bot_session_id" value="">
-                        <label>
-                            Имя
-                            <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться">
-                        </label>
-                        <label>
-                            Телефон
-                            <input type="tel" name="phone" required autocomplete="tel" placeholder="+7 900 000-00-00">
-                        </label>
-                        <label>
-                            E-mail
-                            <input type="email" name="email" required autocomplete="email" placeholder="для подтверждения заявки">
-                        </label>
-                        <label>
-                            Цель прохождения курса
-                            <span class="field-hint">Хватит одной фразы — например, для семьи или работы</span>
-                            <textarea name="purpose" required rows="3" placeholder="например: для семьи / работы"></textarea>
-                        </label>
-                        <button type="submit" class="btn">Отправить заявку</button>
-                        <p class="form-reassure">Ответим в течение дня · офлайн-курс в Москве · 15 августа 2026</p>
-                    </form>
-                    <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
             </div>
         </section>

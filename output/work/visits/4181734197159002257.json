@@ -1,0 +1,31 @@
+{
+  "visitId": "4181734197159002257",
+  "converted": false,
+  "durationSec": 41,
+  "scrollEvents": 30,
+  "clickEvents": 3,
+  "hasFormFocus": false,
+  "botLike": true,
+  "funnelStage": "m2",
+  "section": "s8",
+  "primary": {
+    "label": "Дошёл до тарифов/формы, но не начал взаимодействие с полями",
+    "behavior": "Скролл ~30, кликов 3, без form focus",
+    "friction": "Ранние CTA ведут на тарифы; до submit нужен ещё один клик и заполнение полей",
+    "section": "s8",
+    "funnelStage": "m2",
+    "evidence": "durationSec=41; scroll_events=30; click_events=3; has_form_focus=false",
+    "suggestedFix": "Кнопки Записаться выше формы и прямой скролл к #registration"
+  },
+  "secondary": [
+    {
+      "label": "Ложная кликабельность карточек без действия",
+      "behavior": "Клик/курсор по карточкам контента без перехода к записи",
+      "friction": "cursor:pointer на feature/program/injury без обработчика",
+      "section": "s2",
+      "funnelStage": "m2",
+      "evidence": "falseAffordances: .feature-card, .program-module, .injury-card",
+      "suggestedFix": "Убрать pointer или сделать карточку CTA к форме"
+    }
+  ]
+}

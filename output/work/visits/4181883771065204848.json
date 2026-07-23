@@ -1,0 +1,31 @@
+{
+  "visitId": "4181883771065204848",
+  "converted": false,
+  "durationSec": 55,
+  "scrollEvents": 55,
+  "clickEvents": 4,
+  "hasFormFocus": true,
+  "botLike": true,
+  "funnelStage": "interaction_start",
+  "section": "s9",
+  "primary": {
+    "label": "Дошёл до формы и сфокусировал поле, но не отправил заявку",
+    "behavior": "Глубокий скролл (~55 scroll), focus на поле формы, 4 кликов, без submit",
+    "friction": "Ожидался submit формы → не произошёл; 4 обязательных поля / трение на последнем шаге или бот не завершил сценарий",
+    "section": "s9",
+    "funnelStage": "interaction_start",
+    "evidence": "durationSec=55; scroll_events=55; click_events=4; has_form_focus=true; form_submitted=false",
+    "suggestedFix": "Упростить путь к submit: все CTA сразу к форме, prefill purpose, форма выше на странице"
+  },
+  "secondary": [
+    {
+      "label": "Долгий путь через контент до формы накапливает трение",
+      "behavior": "До focus формы прошло ~55с и ~55 scroll-событий",
+      "friction": "Форма на ~85% высоты; ранние CTA не ведут к заявке",
+      "section": "s1",
+      "funnelStage": "interaction_start",
+      "evidence": "durationSec=55; scroll_events=55; form at y≈7164/8375",
+      "suggestedFix": "Переставить pricing+registration выше; убрать detour на pricing"
+    }
+  ]
+}

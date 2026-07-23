@@ -1,0 +1,31 @@
+{
+  "visitId": "4181706811796619371",
+  "converted": false,
+  "durationSec": 43,
+  "scrollEvents": 28,
+  "clickEvents": 3,
+  "hasFormFocus": false,
+  "botLike": true,
+  "funnelStage": "m1",
+  "section": "s3",
+  "primary": {
+    "label": "Застрял в длинной программе до тарифов и формы",
+    "behavior": "Средний скролл ~28, остановился в контентной зоне",
+    "friction": "Длинный контент до первых кнопок, ведущих к форме (~76% высоты)",
+    "section": "s3",
+    "funnelStage": "m1",
+    "evidence": "durationSec=43; scroll_events=28; click_events=3",
+    "suggestedFix": "Поднять блок тарифов и формы выше; сжать программу"
+  },
+  "secondary": [
+    {
+      "label": "Ложная кликабельность карточек без действия",
+      "behavior": "Клик/курсор по карточкам контента без перехода к записи",
+      "friction": "cursor:pointer на feature/program/injury без обработчика",
+      "section": "s2",
+      "funnelStage": "m1",
+      "evidence": "falseAffordances: .feature-card, .program-module, .injury-card",
+      "suggestedFix": "Убрать pointer или сделать карточку CTA к форме"
+    }
+  ]
+}
