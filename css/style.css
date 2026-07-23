@@ -114,12 +114,200 @@ img {
     letter-spacing: 0.04em;
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.hero-actions .btn-register {
+    width: auto;
+    min-width: 220px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--heading);
+    color: var(--heading);
+}
+
 .hero-note {
-    margin-top: 36px;
-    padding: 24px 28px;
+    margin-top: 28px;
+    padding: 18px 24px;
     border-radius: 18px;
     background: var(--peach);
     color: var(--heading);
+    font-size: 1.02rem;
+}
+
+.sticky-cta {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e5ded6;
+    box-shadow: 0 4px 18px rgba(45, 52, 54, 0.06);
+}
+
+.sticky-cta[hidden] {
+    display: none !important;
+}
+
+.sticky-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+}
+
+.sticky-cta-text {
+    font-weight: 600;
+    color: var(--heading);
+    font-size: 0.95rem;
+}
+
+.sticky-cta .btn-register {
+    width: auto;
+    padding: 10px 20px;
+}
+
+.cta-band {
+    margin-top: 40px;
+    padding: 22px 26px;
+    border-radius: 18px;
+    background: linear-gradient(90deg, rgba(184, 212, 227, 0.45), rgba(200, 230, 201, 0.4));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cta-band-copy {
+    display: grid;
+    gap: 4px;
+}
+
+.cta-band-copy strong {
+    color: var(--heading);
+    font-size: 1.1rem;
+}
+
+.cta-band-copy span {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.cta-band .btn-register {
+    width: auto;
+    min-width: 180px;
+}
+
+.trust-teaser {
+    margin-top: 28px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    color: var(--heading);
+}
+
+.trust-teaser p {
+    margin: 0;
+}
+
+.trust-teaser a {
+    color: var(--heading);
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+.program-summary {
+    margin: 0 0 12px;
+}
+
+.program-module details {
+    margin-top: 4px;
+}
+
+.program-module summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--heading);
+    list-style: none;
+}
+
+.program-module summary::-webkit-details-marker {
+    display: none;
+}
+
+.program-module summary::after {
+    content: " ▾";
+    font-weight: 400;
+}
+
+.program-module details[open] summary::after {
+    content: " ▴";
+}
+
+.program-module details p {
+    margin: 12px 0 0;
+    color: var(--text);
+}
+
+.legal-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.pricing-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--mint);
+    color: var(--heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.pricing-value {
+    margin: -4px 0 0;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.tariff-chip {
+    display: inline-block;
+    margin: 0 0 20px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--mint);
+    color: var(--heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.tariff-chip[hidden] {
+    display: none !important;
+}
+
+.field-hint {
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: #6c757d;
+}
+
+.form-reassure {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6c757d;
+    text-align: center;
 }
 
 .features-grid,
@@ -372,7 +560,7 @@ img {
 }
 
 .form-grid textarea {
-    min-height: 140px;
+    min-height: 88px;
     resize: vertical;
 }
 
@@ -410,5 +598,27 @@ img {
     .registration-panel,
     .hero-note {
         padding: 24px;
+    }
+
+    .hero-actions .btn-register,
+    .cta-band .btn-register {
+        width: 100%;
+    }
+
+    .sticky-cta-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sticky-cta .btn-register {
+        width: 100%;
+    }
+
+    .sticky-cta-text {
+        text-align: center;
+    }
+
+    .pricing-card.featured {
+        transform: none;
     }
 }
