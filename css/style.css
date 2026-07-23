@@ -38,7 +38,7 @@ img {
 }
 
 .section {
-    padding: 72px 0;
+    padding: 48px 0;
 }
 
 .section-title {
@@ -54,14 +54,14 @@ img {
 }
 
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     background:
         radial-gradient(circle at top right, rgba(184, 212, 227, 0.45), transparent 35%),
         radial-gradient(circle at bottom left, rgba(245, 198, 214, 0.35), transparent 30%),
         var(--bg-main);
-    padding: 80px 0 96px;
+    padding: 48px 0 40px;
 }
 
 .hero-content {
@@ -94,8 +94,8 @@ img {
 .meta-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    margin-top: 40px;
+    gap: 14px;
+    margin-top: 24px;
 }
 
 .meta-card {
@@ -351,15 +351,7 @@ img {
 .feature-card,
 .program-module,
 .injury-card {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-card:hover,
-.program-module:hover,
-.injury-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 36px rgba(45, 52, 54, 0.12);
+    cursor: default;
 }
 
 .program-list {
@@ -560,8 +552,15 @@ img {
 }
 
 .form-grid textarea {
-    min-height: 88px;
+    min-height: 72px;
     resize: vertical;
+}
+
+.form-grid button[type="submit"] {
+    width: 100%;
+    padding: 16px 28px;
+    font-size: 1.05rem;
+    background: #7eb6d0;
 }
 
 .form-message {

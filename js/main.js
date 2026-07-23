@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registrationSection = document.getElementById('registration');
-    const pricingSection = document.querySelector('.pricing-section');
     const form = document.getElementById('registration-form');
     const message = document.getElementById('form-message');
     const tariffChip = document.getElementById('tariff-chip');
@@ -11,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let selectedTariff = '';
 
-    const scrollToEl = (el) => {
-        if (!el) {
+    const scrollToRegistration = () => {
+        if (!registrationSection) {
             return;
         }
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        registrationSection.scrollIntoView({ behavior: 'auto', block: 'start' });
     };
 
     const setTariff = (tariff) => {
@@ -48,26 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     registerButtons.forEach((button) => {
         button.addEventListener('click', () => {
             const tariff = button.getAttribute('data-tariff');
-            const scrollTo = button.getAttribute('data-scroll-to');
-
             if (tariff) {
                 setTariff(tariff);
-                scrollToEl(registrationSection);
-                return;
             }
-
-            if (scrollTo === 'pricing') {
-                scrollToEl(pricingSection);
-                return;
-            }
-
-            scrollToEl(registrationSection);
+            scrollToRegistration();
         });
     });
 
     if (stickyCta && hero) {
         const updateSticky = () => {
-            const pastHero = window.scrollY > hero.offsetHeight * 0.7;
+            const pastHero = window.scrollY > Math.max(hero.offsetHeight * 0.5, 200);
             stickyCta.hidden = !pastHero;
         };
         updateSticky();
@@ -81,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (purposeField instanceof HTMLTextAreaElement) {
         purposeField.addEventListener('focus', () => {
             if (selectedTariff && !purposeField.value.trim()) {
-                purposeField.value = `Тариф: ${selectedTariff}. `;
+                purposeField.value = `Тариф: ${selectedTariff}. Хочу пройти курс первой помощи`;
             }
         });
     }
@@ -121,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             form.reset();
+            if (purposeField instanceof HTMLTextAreaElement) {
+                purposeField.value = 'Хочу пройти курс первой помощи';
+            }
             setTariff('');
         } catch (error) {
             if (message) {

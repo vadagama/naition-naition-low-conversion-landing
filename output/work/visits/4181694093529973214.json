@@ -1,0 +1,21 @@
+{
+  "visitId": "4181694093529973214",
+  "converted": false,
+  "durationSec": 19,
+  "scrollEvents": 6,
+  "clickEvents": 0,
+  "hasFormFocus": false,
+  "botLike": true,
+  "funnelStage": "first_viewport",
+  "section": "s1",
+  "primary": {
+    "label": "Ранний выход на первом экране / в начале страницы",
+    "behavior": "Мало скролла (~6), dur=19с",
+    "friction": "Hero без прямого пути к форме или слабый hook; CTA уводит на тарифы",
+    "section": "s1",
+    "funnelStage": "first_viewport",
+    "evidence": "durationSec=19; scroll_events=6; click_events=0; bot_like=True",
+    "suggestedFix": "Сильный CTA в hero сразу к форме; короче hero"
+  },
+  "secondary": []
+}
